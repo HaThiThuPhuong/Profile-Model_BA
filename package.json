@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx server.ts",
+    "dev": "vite",
+    "server": "tsx server.ts",
+    "start": "vite", 
     "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
