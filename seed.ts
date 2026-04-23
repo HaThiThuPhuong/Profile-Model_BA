@@ -115,11 +115,36 @@ const assetStmt = db.prepare(`
   INSERT INTO assets (type, url, title)
   VALUES (?, ?, ?)
 `);
+// Chèn ảnh Visual Diary với đầy đủ thông tin credit
+assetStmt.run(
+  'visual_diary', 
+  '/images/model/anh5.jpg', 
+  'Visual Diary - Ga Văn Quán', 
+  JSON.stringify({
+    date: '10/04/2026',
+    location: 'Ga Văn Quán - 149 Trần Phú, Hà Đông, Hà Nội',
+    credits: {
+      models: [
+        { name: 'Nguyễn Thúy Quỳnh', link: 'https://www.facebook.com/share/17zvLV3sdQ/' },
+        { name: 'Hà Thị Thu Phương', link: 'https://www.facebook.com/share/15i4XZyHwip/' }
+      ],
+      makeup: [
+        { name: 'Hoàng Thu Trang', link: 'https://www.facebook.com/share/1JrVNpHjBX/' }
+      ],
+      photos: [
+        { name: 'Nguyễn Minh Hiếu', link: 'https://www.facebook.com/share/1FuuYU78DF/' },
+        { name: 'Đỗ Trọng Nghĩa', link: 'https://www.facebook.com/share/14ZYzrBhanX/' },
+        { name: 'Vũ Đức Dương', link: 'https://www.facebook.com/share/1HtB4zJmHL/' }
+      ]
+    },
+    vibe: 'Urban, Dreamy'
+  })
+);
 
 // Model Banners
-assetStmt.run('model_banner', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80', 'Editorial Look 1');
-assetStmt.run('model_banner', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80', 'Editorial Look 2');
-assetStmt.run('model_banner', 'https://images.unsplash.com/photo-1492706602235-ce0a5509e7ef?auto=format&fit=crop&q=80', 'Editorial Look 3');
+// assetStmt.run('model_banner', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80', 'Editorial Look 1');
+// assetStmt.run('model_banner', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80', 'Editorial Look 2');
+// assetStmt.run('model_banner', 'https://images.unsplash.com/photo-1492706602235-ce0a5509e7ef?auto=format&fit=crop&q=80', 'Editorial Look 3');
 
 // BA Banners
 assetStmt.run('ba_banner', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80', 'Data Analysis 1');
